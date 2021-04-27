@@ -10,6 +10,8 @@
  String start = request.getParameter("start"); // 파리미터값은 문자로 넘어 오는가?
  //System.out.println(start);  1
  int startIdx;
+ int stst;
+ int startt;
  
  //2
  if (start == null){
