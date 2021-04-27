@@ -27,14 +27,20 @@ public class SelectPage implements SelectPageI {
 			/////////////////////
 			conn = db.getConnection();
 			sql = "select idx,title,name,reg_date from border0427 order by idx desc limit ?,?";
+			
 			pstmt = conn.prepareStatement(sql);
+			
 			//////////////////
 			pstmt.setInt(1, v.getStart());
 			pstmt.setInt(2, count);
 			
-			
 			////////////////
 			rs = pstmt.executeQuery(); // 쿼리로 실행 
+		
+			
+			
+			
+			
 			li = new ArrayList<BorderVo>();  //7
 			
 			while(rs.next()) {
@@ -57,5 +63,47 @@ public class SelectPage implements SelectPageI {
 		
 		return li; //9
 	}
+	
+	
+	
+
+
+
+
+	@Override
+	public int countAll() {
+		DBBean db = DBBean.getInstance();
+		Connection conn = null;
+		String sql = "";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int tc = 0;
+		
+		try {
+			conn = db.getConnection();
+			sql = "select count(*) as tc from border0427";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery(); // 쿼리로 실행 
+			rs.next();
+			tc = rs.getInt("tc");
+			
+			
+			
+			
+
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return tc;
+	}
+		
+		
+		
+		
+
+	
 	
 }

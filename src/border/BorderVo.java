@@ -9,6 +9,8 @@ public class BorderVo {
 	private String name;
 	private Timestamp reg_date;
 	private int start;
+	private String ch1;  // 6교시 검색하기
+	private String ch2;  // 6교시 검색하기
 	
 	
 	public int getIdx() {
@@ -44,10 +46,24 @@ public class BorderVo {
 	public void setStart(int start) {
 		this.start = start;
 	}
+	
+	
+	public String getCh1() {
+		return ch1;
+	}
+	public void setCh1(String ch1) {
+		this.ch1 = ch1;
+	}
+	public String getCh2() {
+		return ch2;
+	}
+	public void setCh2(String ch2) {
+		this.ch2 = ch2;
+	}
 	@Override
 	public String toString() {
 		return "BorderVo [idx=" + idx + ", title=" + title + ", name=" + name + ", reg_date=" + reg_date + ", start="
-				+ start + "]";
+				+ start + ", ch1=" + ch1 + ", ch2=" + ch2 + "]";
 	}
 	
 	

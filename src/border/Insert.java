@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Insert implements InsertI {
 
-	
+	//DAO
 	
 	@Override
 	public void insert(BorderVo v) {   // list2는 매개변수를 받아서 넘겨야 한다 다음장으로 넘겨야 해서 
@@ -13,6 +13,22 @@ public class Insert implements InsertI {
 		String sql="";
 		PreparedStatement pstmt = null;
 		Connection conn = null;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		try {
 			conn = db.getConnection();

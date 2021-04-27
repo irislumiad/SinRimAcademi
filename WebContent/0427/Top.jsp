@@ -53,6 +53,7 @@ footer{
 &emsp;&emsp;<a href=insert.jsp>레코드 등록</a>
 &emsp;&emsp;<a href=List.jsp>게시판 조회</a>
 &emsp;&emsp;<a href=List2.jsp>목록 이전 다음</a>
+&emsp;&emsp;<a href=List3.jsp>목록 이전 다음 + 검색</a>
 &emsp;&emsp;<a href=index.jsp>Home</a>
  
 </nav>
