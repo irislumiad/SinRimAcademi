@@ -41,7 +41,7 @@ public class SelectPageCh implements SelectPageChI {
 				rs = pstmt.executeQuery(); // 쿼리로 실행 
 				
 				} else if (v.getCh1().equals("title")) {
-					sql = "select idx,title,name,reg_date from border0427 like title ? order by idx desc limit ?,? ";	
+					sql = "select idx,title,name,reg_date from border0427 where title like ? order by idx desc limit ?,? ";	
 					pstmt = conn.prepareStatement(sql);
 					pstmt.setString(1, "%" + v.getCh2() + "%");
 					pstmt.setInt(2, v.getStart());
@@ -49,7 +49,7 @@ public class SelectPageCh implements SelectPageChI {
 					rs = pstmt.executeQuery(); // 쿼리로 실행 
 					
 				} else if (v.getCh1().equals("name")) {
-					sql = "select idx,title,name,reg_date from border0427 like name ? order by idx desc limit ?,? ";	
+					sql = "select idx,title,name,reg_date from border0427 where name like ? order by idx desc limit ?,? ";	
 					pstmt = conn.prepareStatement(sql);
 					pstmt.setString(1, "%" + v.getCh2() + "%");
 					pstmt.setInt(2, v.getStart());

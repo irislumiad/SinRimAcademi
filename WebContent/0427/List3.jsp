@@ -29,10 +29,10 @@ request.setCharacterEncoding("UTF-8");
  v.setCh1(ch1);
  v.setCh2(ch2);
  
-  SelectPageI s = new SelectPage();
+  SelectPageChI s = new SelectPageCh();
   List<BorderVo> li = s.select(v);  // 55 스타트idx에서 들어간 v 값을 리스트에 넣어준다. 
   
-  int tc = s.countAll();
+  int tc = s.countAll(v);
   int totalPage = (int)Math.round(tc/10.0); 
   int nowPage = (startIdx / 10)+1;
 
