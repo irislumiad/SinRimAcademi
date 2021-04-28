@@ -24,7 +24,8 @@
  BorderVo v = new BorderVo();
  v.setStart(startIdx); //44 int startIdx; 의 값이 들어간다. 
  
-  SelectPageI s = new SelectPage();
+ 	
+  SelectPageServiceI s = new SelectPageService();
   List<BorderVo> li = s.select(v);  // 55 스타트idx에서 들어간 v 값을 리스트에 넣어준다. 
   
   int tc = s.countAll();
