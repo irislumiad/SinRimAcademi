@@ -1,5 +1,7 @@
-package border;
+package border.service;
 
+import border.dao.Insert;
+import border.vo.BorderVo;
 
 public class InsertService implements InsertServiceI {
 

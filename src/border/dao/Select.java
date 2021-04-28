@@ -1,10 +1,13 @@
-package border;
+package border.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+
+import border.Bean.DBBean;
+import border.vo.BorderVo;
 
 public class Select implements SelectI {
 

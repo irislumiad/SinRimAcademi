@@ -1,4 +1,4 @@
-package border;
+package border.Bean;
 
 import java.sql.*;
 import javax.sql.*;

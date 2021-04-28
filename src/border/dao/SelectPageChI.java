@@ -1,6 +1,8 @@
-package border;
+package border.dao;
 
 import java.util.List;
+
+import border.vo.BorderVo;
 
 public interface SelectPageChI {
 	public List<BorderVo> select(BorderVo v);

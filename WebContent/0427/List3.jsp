@@ -1,3 +1,7 @@
+<%@ taglib uri ="http://java.sun.com/jstl/core_rt" prefix ="c" %> 
+<%@page import="border.dao.SelectPageCh"%>
+<%@page import="border.dao.SelectPageChI"%>
+<%@page import="border.vo.BorderVo"%>
 <%@page import="java.sql.Timestamp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>

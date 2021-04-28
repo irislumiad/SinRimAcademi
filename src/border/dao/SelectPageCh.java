@@ -1,13 +1,13 @@
-package border;
+package border.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import border.BorderVo;
-import border.DBBean;
-import border.SelectPageChI;
+import border.Bean.DBBean;
+import border.dao.SelectPageChI;
+import border.vo.BorderVo;
 
 public class SelectPageCh implements SelectPageChI {
 	
@@ -32,7 +32,7 @@ public class SelectPageCh implements SelectPageChI {
 			
 			conn = db.getConnection();
 			
-				if(v.getCh1() == null || v.getCh1() == "" ) {
+				if(v.getCh1() == null || v.getCh1() == "" || v.getCh1().equals("null") ) {
 				
 				sql = "select idx,title,name,reg_date from border0427 order by idx desc limit ?,? ";	
 				pstmt = conn.prepareStatement(sql);
@@ -93,7 +93,7 @@ public class SelectPageCh implements SelectPageChI {
 		int  tc = 0;
 		try {
 			conn=db.getConnection();
-			if (v.getCh1() == null ||  v.getCh1() == "" ) {
+			if (v.getCh1() == null ||  v.getCh1() == "" ||  v.getCh1().equals("null") ) {
 			  sql ="select count(*) as tc from border0427 ";
 			  pstmt=conn.prepareStatement(sql);
 			} else if (v.getCh1().equals("title")) {

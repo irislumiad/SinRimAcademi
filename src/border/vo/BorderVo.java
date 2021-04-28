@@ -1,4 +1,4 @@
-package border;
+package border.vo;
 
 import java.sql.Timestamp;
 

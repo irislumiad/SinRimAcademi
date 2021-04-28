@@ -1,7 +1,10 @@
-package border;
+package border.dao;
 
 import java.sql.*;
 import java.util.ArrayList;
+
+import border.Bean.DBBean;
+import border.vo.BorderVo;
 
 public class Insert implements InsertI {
 
@@ -13,22 +16,6 @@ public class Insert implements InsertI {
 		String sql="";
 		PreparedStatement pstmt = null;
 		Connection conn = null;
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		try {
 			conn = db.getConnection();

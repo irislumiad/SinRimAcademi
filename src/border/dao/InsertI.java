@@ -1,4 +1,6 @@
-package border;
+package border.dao;
+
+import border.vo.BorderVo;
 
 public interface InsertI {
 	

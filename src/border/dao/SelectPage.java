@@ -1,4 +1,4 @@
-package border;
+package border.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,17 +6,34 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import border.Bean.DBBean;
+import border.vo.BorderVo;
+
 public class SelectPage implements SelectPageI {
+	DBBean db = null;  
+	
+	Connection conn = null;
+	String sql = "";
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	List<BorderVo> li = new ArrayList<BorderVo>(); //<BorderVo>명시화  6
+	
+	private final String sql_select1 =  "select idx,title,name,reg_date from border0427 order by idx desc limit ?,?";
+	private final String sql_count = "select count(*) as tc from border0427";
+	
+	
+	public SelectPage() {
+		db = DBBean.getInstance();
+		
+		
+	}
+	
+	
 
 	@Override
 	public List<BorderVo> select(BorderVo v) {
 		
-		DBBean db = DBBean.getInstance();
-		Connection conn = null;
-		String sql = "";
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		List<BorderVo> li = new ArrayList<BorderVo>(); //<BorderVo>명시화  6
+		
 		
 		try {
 			
@@ -26,9 +43,7 @@ public class SelectPage implements SelectPageI {
 			
 			/////////////////////
 			conn = db.getConnection();
-			sql = "select idx,title,name,reg_date from border0427 order by idx desc limit ?,?";
-			
-			pstmt = conn.prepareStatement(sql);
+			pstmt = conn.prepareStatement(sql_select1);
 			
 			//////////////////
 			pstmt.setInt(1, v.getStart());
@@ -63,26 +78,15 @@ public class SelectPage implements SelectPageI {
 		
 		return li; //9
 	}
-	
-	
-	
-
-
-
 
 	@Override
 	public int countAll() {
-		DBBean db = DBBean.getInstance();
-		Connection conn = null;
-		String sql = "";
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+		
 		int tc = 0;
 		
 		try {
 			conn = db.getConnection();
-			sql = "select count(*) as tc from border0427";
-			pstmt = conn.prepareStatement(sql);
+			pstmt = conn.prepareStatement(sql_count);
 			rs = pstmt.executeQuery(); // 쿼리로 실행 
 			rs.next();
 			tc = rs.getInt("tc");

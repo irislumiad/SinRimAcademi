@@ -1,8 +1,13 @@
+<%@ taglib uri ="http://java.sun.com/jstl/core_rt" prefix ="c" %> <!-- for문이나 반복문 등을 바꾼다 -->
+<%@page import="border.vo.BorderVo"%>
+<%@page import="border.dao.SelectI"%>
+<%@page import="border.dao.Select"%>
 <%@page import="java.sql.Timestamp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
 <%@ page import="border.*" %>
+
 
 <% 
 // request.setCharacterEncoding("UTF-8"); form 에서 파라미터값을 넘길때 사용 하는거 

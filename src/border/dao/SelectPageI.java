@@ -1,8 +1,9 @@
-package border;
-
+package border.dao;
 import java.util.List;
 
-public interface SelectPageServiceI {
+import border.vo.BorderVo;
+
+public interface SelectPageI {
 	public List<BorderVo> select(BorderVo v);
 	public int countAll();
 }
