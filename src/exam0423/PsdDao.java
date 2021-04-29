@@ -4,6 +4,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import package0429.conn.DBBean;
+
 public class PsdDao  implements PsdDaoI {
 	DBBean db = DBBean.getInstance();
 	Connection conn=null;

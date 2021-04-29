@@ -8,9 +8,14 @@ public class BorderVo {
 	private String title;
 	private String name;
 	private Timestamp reg_date;
+	
+	
+	
 	private int start;
+	
 	private String ch1;  // 6교시 검색하기
 	private String ch2;  // 6교시 검색하기
+	
 	
 	
 	public int getIdx() {

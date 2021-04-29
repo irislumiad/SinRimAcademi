@@ -1,6 +1,7 @@
 package border.Servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.RequestDispatcher;
@@ -13,6 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 import border.dao.Insert;
 import border.service.InsertService;
 import border.service.InsertServiceI;
+import border.service.SelectPageServiceI;
+import border.service.SelectService;
+import border.service.SelectServiceI;
 import border.vo.BorderVo;
 
 /**
@@ -37,8 +41,16 @@ public class InsertServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
 		
+		SelectServiceI s = new SelectService();
+		 List<BorderVo> li = s.select();
+		 request.setAttribute("boardList", li);
+
+		 RequestDispatcher dispatcher
+		 	=request.getRequestDispatcher("/0427/list_jst1.jsp");
+		 dispatcher.forward(request, response);
+				 
 		
-		
+		/*
 		BorderVo v = new BorderVo();
 		InsertServiceI i = new InsertService();
 		i.insert(v);
@@ -47,6 +59,7 @@ public class InsertServlet extends HttpServlet {
 		//System.out.println("이건뭐얌:"+dispatcher);
 		
 		dispatcher.forward(request, response);
+		*/
 	}	
 	
 	

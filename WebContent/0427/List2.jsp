@@ -1,4 +1,4 @@
-<%@ taglib uri ="http://java.sun.com/jstl/core_rt" prefix ="c" %>
+<%@ taglib uri ="http://java.sun.com/jstl/core_rt" prefix ="c" %>request.getParameter("start")
 <%@page import="border.service.SelectPageService"%>
 <%@page import="border.dao.SelectPage"%>
 <%@page import="border.service.SelectPageServiceI"%>

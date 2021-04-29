@@ -1,4 +1,4 @@
-<%@ taglib uri ="http://java.sun.com/jstl/core_rt" prefix ="c" %> List3.jsp
+lib uri ="http://java.sun.com/jstl/core_rt" prefix ="c" %> List3.jsp
 <%@page import="border.dao.SelectPageCh"%>
 <%@page import="border.dao.SelectPageChI"%>
 <%@page import="border.vo.BorderVo"%>
@@ -9,36 +9,7 @@
 <%@ page import="border.*" %>
 
 <% 
-request.setCharacterEncoding("UTF-8");
 
- String start = request.getParameter("start"); // 파리미터값은 문자로 넘어 오는가?  //22 스타트 값을 받아주고 
- //System.out.println(start);  1
- int startIdx;
-
- //2
- if (start == null){  //33 값을 조건 처리 한다. 
-	 startIdx = 0;
-	 
- }else{
-	 startIdx =Integer.parseInt(request.getParameter("start")) ;
- }
-
- String ch1 = request.getParameter("ch1");
- String ch2 = request.getParameter("ch2");
- 
- 
- 
- BorderVo v = new BorderVo();
- v.setStart(startIdx); //44 int startIdx; 의 값이 들어간다. 
- v.setCh1(ch1);
- v.setCh2(ch2);
- 
-  SelectPageChI s = new SelectPageCh();
-  List<BorderVo> li = s.select(v);  // 55 스타트idx에서 들어간 v 값을 리스트에 넣어준다. 
-  
-  int tc = s.countAll(v);
-  int totalPage = (int)Math.round(tc/10.0); 
-  int nowPage = (startIdx / 10)+1;
 
 %>
 

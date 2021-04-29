@@ -131,3 +131,14 @@ select count(*) from border0427;
 
 
 
+create table border0429 (
+	idx int not null primary key auto_increment,
+	name varchar(30) not null,
+	price int not null,
+	etc varchar(10) ,
+	amount int not null
+
+);
+
+select * from border0429;
+

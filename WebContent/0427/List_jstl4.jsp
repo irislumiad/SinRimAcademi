@@ -1,4 +1,4 @@
-<%@ taglib uri ="http://java.sun.com/jstl/core_rt" prefix ="c" %> List3.jsp
+<%@ taglib uri ="http://java.sun.com/jstl/core_rt" prefix ="c" %> 
 <%@page import="border.dao.SelectPageCh"%>
 <%@page import="border.dao.SelectPageChI"%>
 <%@page import="border.vo.BorderVo"%>
@@ -47,8 +47,16 @@ request.setCharacterEncoding("UTF-8");
 		<div align="center">
 			<h2> 리스트 목록 </h2>
 				<table border = 1 >
-					전체레코드 수: <%=tc %> &emsp; 전체페이지 수 : <%=totalPage %> &emsp; 현재페이지 : <%=nowPage%>
+					전체레코드 수: ${count.tc}  &emsp; 전체페이지 수 : ${count.totalPage} %> &emsp; 현재페이지 : ${count.nowPage}
 					<tr><td>번호</td><td>제목</td><td>이름</td><td>날짜</td></tr>
+					
+					
+					<c:forEach items="${boardList}" var="board">
+					<td
+					  
+					
+					</c:forEach>
+					
 					<%
 					int idx = 0;
 					String title = null;
